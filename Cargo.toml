@@ -1,0 +1,22 @@
+[package]
+name = "clapdown"
+version = "0.1.0"
+edition = "2021"
+readme = "README.md"
+
+# See more keys and their definitions at
+# https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+env = ["clap/env"]
+default = ["env"]
+
+[dependencies]
+clap = { version = "4", default-features = false, features = ["std", "usage"] }
+
+[dev-dependencies]
+clap = { version = "4", default-features = false, features = ["std", "usage", "derive"] }
+
+[[example]]
+name = "git-derive"
+required-features = ["clap/derive"]
